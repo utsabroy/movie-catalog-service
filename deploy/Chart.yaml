@@ -1,0 +1,12 @@
+################################################################################
+# HELM CHART FOR `movie-catalog-service`
+################################################################################
+
+apiVersion: v2
+name: movie-catalog-service
+version: "1.0.0"
+description: Sample move catalog microservice
+dependencies:
+  - name: k8-application
+    repository: "file://../../../helm/k8-application-chart/"
+    version: ">= 1.0.0"

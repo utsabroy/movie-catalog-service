@@ -1,0 +1,35 @@
+k8-application:
+
+  containers:
+    project-api:
+      image:
+        name: movie-catalog-service
+        tag: latest
+      ports:
+        - 8080
+      environment:
+        PORT: 8080
+      readinessProbe:
+        httpGet:
+          path: /actuator/health
+          port: 80
+        initialDelaySeconds: 3
+        periodSeconds: 3
+      livenessProbe:
+        httpGet:
+          path: /actuator/health
+          port: 80
+        initialDelaySeconds: 15
+        periodSeconds: 20
+
+  service:
+    metadata:
+      annotations:
+        service.beta.kubernetes.io/aws-load-balancer-type: "internal"
+        service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+        service.beta.kubernetes.io/aws-load-balancer-scheme: internal
+        service.beta.kubernetes.io/aws-load-balancer-healthcheck-path: /actuator/health
+        service.beta.kubernetes.io/aws-load-balancer-healthcheck-protocol: HTTP
+    type: LoadBalancer
+    ports:
+      - 80
