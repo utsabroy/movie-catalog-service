@@ -1,0 +1,12 @@
+bases:
+  - ../../base
+
+namespace: 
+  dev
+
+patches:
+  - replicas.yaml
+
+configMapGenerator:
+  - name: movie-catalog-dev-cm
+    env: config.properties

@@ -1,0 +1,15 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+commonLabels:
+  app: movie-catalog-service
+
+commonAnnotations:
+  app: movie-catalog-service
+
+namePrefix: 
+  kustom-
+
+nameSuffix:
+  -v1
