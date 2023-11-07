@@ -8,5 +8,5 @@ version: "1.0.0"
 description: Sample move catalog microservice
 dependencies:
   - name: k8-application
-    repository: "file://../../../helm/k8-application-chart/"
+    repository: "https://utsabroy.github.io/kcharts/"
     version: ">= 1.0.0"
