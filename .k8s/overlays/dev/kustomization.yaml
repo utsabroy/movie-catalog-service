@@ -4,7 +4,7 @@ bases:
 namespace: 
   dev
 
-patches:
+patchesStrategicMerge:
   - replicas.yaml
 
 commonAnnotations:
