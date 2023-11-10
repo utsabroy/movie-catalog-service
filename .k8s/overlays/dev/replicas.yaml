@@ -1,15 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: movie-catalog
+  name: movie-catalog-service
 spec:
   replicas: 2
-  strategy: {}
-  template:
-    spec:
-      containers:
-      - image: utsabroy/movie-info-service:8e9ff6d
-        name: movie-info-service
-        envFrom:
-        - configMapRef:
-            name: movie-catalog-dev-cm-dc6fm46dhm

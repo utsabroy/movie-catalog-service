@@ -7,6 +7,8 @@ namespace:
 patches:
   - replicas.yaml
 
-configMapGenerator:
-  - name: movie-catalog-dev-cm
-    env: config.properties
+commonAnnotations:
+  app.kubernetes.io/instance: dev
+
+commonLabels:
+  app.kubernetes.io/instance: dev

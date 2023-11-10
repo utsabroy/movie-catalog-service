@@ -1,9 +1,14 @@
 resources:
   - deployment.yaml
   - service.yaml
+  - hpa.yaml
+  - ingress.yaml
+  - podDisruption.yaml
 
 commonLabels:
-  app: movie-catalog-service
+  app.kubernetes.io/name: movie-catalog-service
+  app.kubernetes.io/instance: RELEASE-NAME
+  app.kubernetes.io/managed-by: Kustomize
 
 commonAnnotations:
   app: movie-catalog-service
